@@ -1,0 +1,11 @@
+#root {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+@media only screen and (max-width:600px) {
+  #root {
+    padding: 0.3rem;
+  }
+}
