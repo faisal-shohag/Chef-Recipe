@@ -5,13 +5,9 @@ import { useState } from 'react';
 const Post = ({cook, handleCook}) => {
     const {recipe_image, recipe_name, short_description, ingredients, preparing_time, calories} = cook
 
-    const [more, setMore] = useState(4)
     const [click, setClick] = useState(false)
 
-    const handleMore = () => {
-        setMore(cook.ingredients.length)
-        setClick(true)
-    }
+
 
     return (
         <div className='border-[1px] flex flex-col items-center px-5 py-5 rounded-2xl max-w-[379px]'>
@@ -24,7 +20,6 @@ const Post = ({cook, handleCook}) => {
                 <ul className='list-disc pl-7 mb-1 text-[#878787] fira-sans'>
                     {ingredients.slice(0, more).map((ing, index)=><li key={index}>{ing}</li>)}
                 </ul>
-                {!click && <div onClick={handleMore} className='underline text-[#2ebf83] text-sm mb-3 text-center cursor-pointer w-full'>See more...</div>}
                 <hr/>
                 <div className='flex items-center gap-10 mt-3 text-[#282828CC]'>
                     <div className='flex items-center gap-1'><span className='text-xl'><GoClock /></span> {preparing_time} minutes</div>
